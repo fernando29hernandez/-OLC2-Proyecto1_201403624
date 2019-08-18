@@ -1,34 +1,51 @@
 /**
- * Ejemplo mi primer proyecto con Jison utilizando Nodejs en Ubuntu
+ * Proyecto 1 Compiladores 2 analizador para CQL Lado Cliente 
+ * Fernando Antonio Hernandez Gramajo
+ * 201403624
+ * 
  */
 
-/* Definición Léxica */
+/* Definiciones Léxicas */
 %lex
 
 %options case-insensitive
 
 %%
 
-"Evaluar"			return 'REVALUAR';
-";"					return 'PTCOMA';
-"("					return 'PARIZQ';
-")"					return 'PARDER';
-"["					return 'CORIZQ';
-"]"					return 'CORDER';
+";"					return 'PUNTOCOMA';
+"("					return 'PARENTESISIZQUIERDO';
+")"					return 'PARENTESISDERECHO';
+"["					return 'CORCHETEIZQUIERDO';
+"]"					return 'CORCHETEDERECHO';
 
 "+"					return 'MAS';
 "-"					return 'MENOS';
 "*"					return 'POR';
 "/"					return 'DIVIDIDO';
-
+"**"                return 'POTENCIA';
+	
 
 /* Espacios en blanco */
-[ \r\t]+			{}
 \n					{}
+\s+											// se ignoran espacios en blanco
 
+/* Comentarios Una y Multilinea*/
+"//".*										// comentario simple línea
+[/][*][^*]*[*]+([^/*][^*]*[*]+)*[/]			// comentario multiple líneas
 
+/* Cadenas */
+\"[^\"]*\"				{ yytext = yytext.substr(1,yyleng-2); return 'CADENA'; }
+\'[^\"]*\'				{ yytext = yytext.substr(1,yyleng-2); return 'CADENASIMPLE'; }
+
+/* datos primitivos */
 [0-9]+("."[0-9]+)?\b  	return 'DECIMAL';
 [0-9]+\b				return 'ENTERO';
+"true"                  return 'VERDADERO';
+"false"                 return 'FALSO';
+
+
+"null"                  return 'NULO';
+([a-zA-Z])[a-zA-Z0-9_]*	return 'IDENTIFICADOR';
 
 <<EOF>>				return 'EOF';
 

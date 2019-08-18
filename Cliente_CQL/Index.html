@@ -24,8 +24,28 @@
   
 <script src="gramatica.js"></script>  
 <script>
-function parser() {
-   var respuesta =  gramatica.parse(document.getElementById('entrada').value);
-   document.getElementById('respuesta').value = respuesta;
+async function  parser() {
+   
+   /*   var respuesta =  gramatica.parse(document.getElementById('entrada').value);
+        document.getElementById('respuesta').value = respuesta;
+   */
+    await fetch( "http://localhost:49285/api/LUP", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept':'text/json'
+        },
+        body: '='+encodeURIComponent(document.getElementById('entrada').value)
+    })
+    .then(function(response) {
+        console.log('response =', response);
+        return response.json();
+    })
+    .then(function(data) {
+        document.getElementById('respuesta').value = data;
+    })
+    .catch(function(err) {
+        console.error(err);
+    });
 }
 </script>

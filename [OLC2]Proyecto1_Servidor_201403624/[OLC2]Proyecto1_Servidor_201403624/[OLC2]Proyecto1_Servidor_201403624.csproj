@@ -1,0 +1,227 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1BBB8F3D-AC8C-4AFC-982C-50830DB00ED5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_OLC2_Proyecto1_Servidor_201403624</RootNamespace>
+    <AssemblyName>[OLC2]Proyecto1_Servidor_201403624</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.WINGRAPHVIZLib">
+      <HintPath>..\..\..\Interop.WINGRAPHVIZLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Irony">
+      <HintPath>..\..\..\..\Downloads\InterpreteSencilloIronyCS-master\InterpreteSencillo\InterpreteSencillo\bin\Debug\Irony.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\Analizador_CQL\Gramatica_CQL.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Analizador_CHISON\Arbol_CHISON\Arbol_CHISON.cs" />
+    <Compile Include="Controllers\Analizador_CHISON\Arbol_CHISON\Entorno\Entorno.cs" />
+    <Compile Include="Controllers\Analizador_CHISON\Arbol_CHISON\Entorno\Simbolo.cs" />
+    <Compile Include="Controllers\Analizador_CHISON\Arbol_CHISON\Instrucciones\CUERPO_CHISON.cs" />
+    <Compile Include="Controllers\Analizador_CHISON\Arbol_CHISON\Instrucciones\DATABASES.cs" />
+    <Compile Include="Controllers\Analizador_CHISON\Arbol_CHISON\Instrucciones\ELEMENTO_CHISON.cs" />
+    <Compile Include="Controllers\Analizador_CHISON\Arbol_CHISON\Instrucciones\IMPORTAR_CHISON.cs" />
+    <Compile Include="Controllers\Analizador_CHISON\Arbol_CHISON\Instrucciones\Instrucccion.cs" />
+    <Compile Include="Controllers\Analizador_CHISON\Arbol_CHISON\Instrucciones\USERS.cs" />
+    <Compile Include="Controllers\Analizador_CHISON\Arbol_CHISON\Nodo_CHISON.cs" />
+    <Compile Include="Controllers\Analizador_CHISON\Gramatica_CHISON.cs" />
+    <Compile Include="Controllers\Analizador_CHISON\Sintactico_CHISON.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Arbol_CQL.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Entorno\Entorno.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Entorno\Simbolo.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Condicionales\CASO.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Condicionales\SI.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Condicionales\SELECCIONA.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Simples\THROW.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Condicionales\TRY_CATCH.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DCL\CREATE_USER.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DCL\GRANT.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DCL\REVOKE.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DDL\ALTER_TABLE.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DDL\ALTER_USER_TYPE.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DDL\CREATE_BD.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DDL\CREATE_TABLE.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DDL\CREATE_USER_TYPE.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DDL\DELETE_USER_TYPE.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DDL\DROP_BD.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DDL\DROP_TABLE.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DDL\TRUNCATE_TABLE.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DDL\USE_BD.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DML\AGREGACION.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DML\BATCH.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\FCL\CLOSE_CURSOR.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DML\DELETE.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DML\INSERT.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\FCL\DECLARAR_CURSOR.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\FCL\OPEN_CURSOR.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DML\SELECT.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\DML\UPDATE.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\TCL\COMMIT.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\CQL\TCL\ROLLBACK.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Instruccion.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Iterativas\FOR_EACH.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Iterativas\FOR_SIMPLE.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Iterativas\HACER_MIENTRAS.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Iterativas\MIENTRAS.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Simples\ASIGNACION.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Simples\CONTINUAR.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Simples\DECLARACION.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Simples\DETENER.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Simples\FUNCION.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Simples\LOG.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Simples\PROCEDIMIENTO.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Instrucciones\Simples\RETORNAR.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Arbol_CQL\Nodo_CQL.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Gramatica_CQL.cs" />
+    <Compile Include="Controllers\Analizador_CQL\Sintactico_CQL.cs" />
+    <Compile Include="Controllers\Analizador_LUP\Arbol_LUP\Arbol_LUP.cs" />
+    <Compile Include="Controllers\Analizador_LUP\Arbol_LUP\ETIQUETA_DATA.cs" />
+    <Compile Include="Controllers\Analizador_LUP\Arbol_LUP\ETIQUETA_LOGIN.cs" />
+    <Compile Include="Controllers\Analizador_LUP\Arbol_LUP\ETIQUETA_LOGOUT.cs" />
+    <Compile Include="Controllers\Analizador_LUP\Arbol_LUP\ETIQUETA_PASS.cs" />
+    <Compile Include="Controllers\Analizador_LUP\Arbol_LUP\ETIQUETA_QUERY.cs" />
+    <Compile Include="Controllers\Analizador_LUP\Arbol_LUP\ETIQUETA_STRUCT.cs" />
+    <Compile Include="Controllers\Analizador_LUP\Arbol_LUP\ETIQUETA_USER.cs" />
+    <Compile Include="Controllers\Analizador_LUP\Arbol_LUP\Nodo_LUP.cs" />
+    <Compile Include="Controllers\Analizador_LUP\Gramatica_LUP.cs" />
+    <Compile Include="Controllers\Analizador_LUP\Sintactico_LUP.cs" />
+    <Compile Include="Controllers\Graficador\Graficar_Arbol.cs" />
+    <Compile Include="Controllers\LUPController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Analizador_CHISON\Arbol_CHISON\Expresiones\" />
+    <Folder Include="Controllers\Analizador_CQL\Arbol_CQL\Expresiones\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49285</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49285/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
